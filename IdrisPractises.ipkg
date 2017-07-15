@@ -1,0 +1,16 @@
+package IdrisPractises
+
+version    = 0.0.1
+brief      = "Initial project template from idringen"
+
+author     = GrandArchTemplar <GrandArchTemplar@gmail.com>
+license    = BSD3
+homepage   = https://github.com/githubuser/IdrisPractises
+sourceloc  = git@github.com:githubuser/IdrisPractises.git
+bugtracker = https://github.com/githubuser/IdrisPractises/issues
+
+sourcedir  = src
+modules    = Test
+tests      = Test.spec
+executable = IdrisPractises
+main       = Main
