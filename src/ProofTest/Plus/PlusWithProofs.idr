@@ -22,3 +22,18 @@ pls_uniq_neu : (n, k : Nat) -> pls n k = n -> k = Z
 pls_uniq_neu Z k prf = prf
 pls_uniq_neu (S j) k prf = let rec = pls_uniq_neu (S j) k prf in 
                                rewrite rec in Refl
+
+
+pls_commute_S : (k : Nat) -> (m : Nat) -> S (pls k m) = pls m (S k)
+pls_commute_S Z Z = Refl
+pls_commute_S (S k) Z = rewrite pls_commute_S k Z in Refl
+pls_commute_S k (S j) = rewrite pls_commute_S k (S j) in Refl
+
+pls_commute : (n, m : Nat) -> pls n m = pls m n
+pls_commute Z Z = Refl
+pls_commute Z (S k) = rewrite pls_commute Z k in Refl
+pls_commute (S k) m = pls_commute_S k m
+
+pls_assoc : (a, b, c : Nat) -> pls a (pls b c) = pls (pls a b) c
+pls_assoc Z b c = Refl
+pls_assoc (S k) b c = rewrite pls_assoc k b c in Refl
