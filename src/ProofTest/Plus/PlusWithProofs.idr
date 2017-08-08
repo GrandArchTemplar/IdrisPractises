@@ -3,7 +3,6 @@ pls Z y = y
 pls (S x) y = S $ pls x y
 
 
-
 pls_left_neu_elem : (n : Nat) -> n = pls Z n
 pls_left_neu_elem n = Refl
 
